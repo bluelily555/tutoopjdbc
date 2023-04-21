@@ -1,9 +1,9 @@
-package week1.day5;
+package codeup;
 
 import java.util.Scanner;
 
 public class Codeup1017 {
-    public void problem(){
+    public static void main(){
         Scanner sc = new Scanner(System.in);
 
         int i = sc.nextInt();
