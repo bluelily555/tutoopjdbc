@@ -11,37 +11,54 @@ public class SumOfAttachNumber {
 }
 class Solution {
     public static int solution(int[] numList) {
-        int answer = 0;
-        int oddCnt = 0;
-        int evenCnt = 0;
         int odd = 0;
         int even = 0;
 
-        int[] oddList = new int[numList.length];
-        int[] evenList = new int[numList.length];
-        for(int i = 0; i < numList.length; i++){
+        int evenExpo = 1;
+        int oddExpo = 1;
+
+        for(int i = numList.length -1 ; i > -1; i--){
             if(numList[i] % 2 == 0){
-                evenList[evenCnt] = numList[i];
-                evenCnt++;
+                even += numList[i] * evenExpo;
+                evenExpo *= 10;
             } else {
-                oddList[oddCnt] = numList[i];
-                oddCnt++;
+                odd += numList[i] * oddExpo;
+                oddExpo *= 10;
             }
         }
 
-        int expo = 1;
-        for(int i = oddCnt - 1; i > -1; i--){
-            odd += oddList[i] * expo;
-            expo *= 10;
-        }
+        int answer = odd + even;
 
-        expo = 1;
-        for(int i = evenCnt - 1; i > -1; i--){
-            even += evenList[i] * expo;
-            expo *= 10;
-        }
-
-        answer = odd + even;
+//        int oddCnt = 0;
+//        int evenCnt = 0;
+//        int odd = 0;
+//        int even = 0;
+//
+//        int[] oddList = new int[numList.length];
+//        int[] evenList = new int[numList.length];
+//        for(int i = 0; i < numList.length; i++){
+//            if(numList[i] % 2 == 0){
+//                evenList[evenCnt] = numList[i];
+//                evenCnt++;
+//            } else {
+//                oddList[oddCnt] = numList[i];
+//                oddCnt++;
+//            }
+//        }
+//
+//        int expo = 1;
+//        for(int i = oddCnt - 1; i > -1; i--){
+//            odd += oddList[i] * expo;
+//            expo *= 10;
+//        }
+//
+//        expo = 1;
+//        for(int i = evenCnt - 1; i > -1; i--){
+//            even += evenList[i] * expo;
+//            expo *= 10;
+//        }
+//
+//        answer = odd + even;
         return answer;
     }
 }
