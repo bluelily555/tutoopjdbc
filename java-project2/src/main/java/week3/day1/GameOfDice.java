@@ -34,7 +34,7 @@ class Solution2 {
         }
 
         answer = (a + b + c);
-        if(abSame || abSame || bcSame) answer *= (a*a + b*b + c*c);
+        if(abSame || acSame || bcSame) answer *= (a*a + b*b + c*c);
         if(abSame && acSame && bcSame) answer *= (a*a*a + b*b*b + c*c*c);
 
 
