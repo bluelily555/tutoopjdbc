@@ -1,4 +1,4 @@
-package week3.day1;
+package week3.day2;
 
 public class ForLoopCase {
     public static void main(String[] args) {
